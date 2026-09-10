@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A rotating customer waitlist display for Harbor & Co. Salon."
+    />
+    <title>Harbor & Co. Salon | Waitlist</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="wallboard" aria-live="polite">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Harbor and Company Salon home">
+          <span class="brand-mark">H</span>
+          <span>
+            <strong>Harbor &amp; Co.</strong>
+            <small>Salon &amp; Studio</small>
+          </span>
+        </a>
+
+        <div class="topbar-meta">
+          <span class="demo-badge">Demo data</span>
+          <time id="clock" aria-label="Current local time"></time>
+        </div>
+      </header>
+
+      <section class="display-stage" id="display-stage" aria-label="Rotating salon announcements">
+        <div class="stage-track" id="stage-track">
+          <article class="stage-slide" data-view="serving">
+            <div class="view-copy">
+              <p class="eyebrow">Today at Harbor</p>
+              <h1>Now serving</h1>
+              <p class="view-description">Your stylist will welcome you shortly.</p>
+            </div>
+            <article class="ad-card" aria-label="Salon promotion">
+              <span class="ad-tag">Fresh favorite</span>
+              <p class="ad-symbol" aria-hidden="true">✦</p>
+              <h2>Glossy, on your schedule</h2>
+              <p>Add a 10-minute shine treatment to any appointment today.</p>
+              <span class="ad-detail">Ask your stylist</span>
+            </article>
+          </article>
+
+          <article class="stage-slide" data-view="overview">
+            <div class="view-copy">
+              <p class="eyebrow">Your place in line</p>
+              <h1>A little wait, a lot of care</h1>
+              <p class="view-description">Take a breath—we're preparing a seat just for you.</p>
+            </div>
+            <article class="ad-card" aria-label="Salon promotion">
+              <span class="ad-tag">Harbor special</span>
+              <p class="ad-symbol" aria-hidden="true">✦</p>
+              <h2>Midweek reset</h2>
+              <p>Enjoy 15% off a conditioning treatment every Tuesday and Wednesday.</p>
+              <span class="ad-detail">Offer ends this month</span>
+            </article>
+          </article>
+
+          <article class="stage-slide" data-view="specials">
+            <div class="view-copy">
+              <p class="eyebrow">Made for you</p>
+              <h1>A beautiful day starts here</h1>
+              <p class="view-description">Ask your stylist about today's treatments and finishing touches.</p>
+            </div>
+            <article class="ad-card" aria-label="Salon promotion">
+              <span class="ad-tag">Take home the glow</span>
+              <p class="ad-symbol" aria-hidden="true">✦</p>
+              <h2>Your new wash-day ritual</h2>
+              <p>Ask us which salon-quality essentials suit your hair and routine.</p>
+              <span class="ad-detail">Browse the retail shelf</span>
+            </article>
+          </article>
+
+          <article class="stage-slide" data-view="serving" aria-hidden="true">
+            <div class="view-copy">
+              <p class="eyebrow">Today at Harbor</p>
+              <h1>Now serving</h1>
+              <p class="view-description">Your stylist will welcome you shortly.</p>
+            </div>
+            <article class="ad-card" aria-label="Salon promotion">
+              <span class="ad-tag">Fresh favorite</span>
+              <p class="ad-symbol" aria-hidden="true">✦</p>
+              <h2>Glossy, on your schedule</h2>
+              <p>Add a 10-minute shine treatment to any appointment today.</p>
+              <span class="ad-detail">Ask your stylist</span>
+            </article>
+          </article>
+        </div>
+      </section>
+
+      <section class="waitlist-panel" aria-labelledby="waitlist-heading">
+        <div class="waitlist-heading">
+          <div>
+            <p class="eyebrow">Live queue</p>
+            <h2 id="waitlist-heading">Customer waitlist</h2>
+          </div>
+          <p class="queue-summary" id="queue-summary">6 guests waiting</p>
+        </div>
+
+        <div class="waitlist-table" role="table" aria-label="Customer waitlist">
+          <div class="table-row table-labels" role="row">
+            <span role="columnheader">Guest</span>
+            <span role="columnheader">Service</span>
+            <span role="columnheader">Party</span>
+            <span role="columnheader">Wait</span>
+            <span role="columnheader">Status</span>
+          </div>
+          <div id="waitlist-rows" role="rowgroup"></div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span id="rotation-status">Refreshing display in 10 seconds</span>
+        <span>Thank you for waiting with us.</span>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
